@@ -39,8 +39,18 @@ public class Main {
                     } else {
                         System.out.println("vo hieu hoa khong thanh cong");
                     }
+                case 5:
+                    Account account2 = new Account();
+                    System.out.println("nap so tien can nap them: ");
+                    int money2 = input.nextInt();
+                    boolean addmoney = accountTest.changeMoney(account2);
+                    if (addmoney){
+                        System.out.println("da nap tien thanh cong");
+                    }else {
+                        System.out.println(" ban khong duoc nap qua 100 $");
+                    }
             }
-        } while (check != 5);
+        } while (check != 6);
 
     }
 
@@ -49,6 +59,7 @@ public class Main {
         System.out.println("2.Them tai khoan.");
         System.out.println("3.sua tai khoan.");
         System.out.println("4.vo hieu hoa tai khoan");
+        System.out.println("5. nap them tien vao tai khoan: ");
     }
 
     public static Account inputAccount() {

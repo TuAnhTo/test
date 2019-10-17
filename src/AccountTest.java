@@ -17,7 +17,7 @@ public class AccountTest implements interfaceAccount {
 
     @Override
     public void showAccount() {
-        System.out.println("ID" + "\t" + "Tai Khoan 1" + "\t" + "Tai Khoan 2" +"\t"+ "Ngan Hang Lien Ket" + "\t" + "So tien hien tai");
+        System.out.println("ID" + "\t" + "Tai Khoan 1" + "\t" + "Tai Khoan 2" + "\t" + "Ngan Hang Lien Ket" + "\t" + "So tien hien tai");
         for (Account account : accounts) {
             System.out.println(account.getID() + "\t" + account.getnAccount1() + "\t" + account.getnAccount2() + "\t" + account.getnBank() + "\t" + account.getMoney());
         }
@@ -44,5 +44,19 @@ public class AccountTest implements interfaceAccount {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean changeMoney(Account account,int money2) {
+            if (  money2 < 100 && money2 > 0) {
+                int  total = account.getMoney() + money2;
+                total = account.getMoney();
+                 return true;
+            } else {
+                System.out.println(" so tien nhap vao qua 100 $");
+
+            }
+            return false;
+
     }
 }

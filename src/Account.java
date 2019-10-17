@@ -5,7 +5,10 @@ public class Account {
     private String nBank;
     private int money;
 
-    public Account(){};
+    public Account() {
+    }
+
+    ;
 
     public Account(int ID, String nAccount1, String nAccount2, String nBank, int money) {
         this.ID = ID;
