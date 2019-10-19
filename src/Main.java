@@ -43,7 +43,7 @@ public class Main {
                     Account account2 = new Account();
                     System.out.println("nap so tien can nap them: ");
                     int money2 = input.nextInt();
-                    boolean addmoney = accountTest.changeMoney(account2);
+                    boolean addmoney = accountTest.changeMoney(money2);
                     if (addmoney){
                         System.out.println("da nap tien thanh cong");
                     }else {

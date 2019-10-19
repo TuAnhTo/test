@@ -45,18 +45,15 @@ public class AccountTest implements interfaceAccount {
         }
         return false;
     }
-
     @Override
-    public boolean changeMoney(Account account,int money2) {
-            if (  money2 < 100 && money2 > 0) {
-                int  total = account.getMoney() + money2;
-                total = account.getMoney();
-                 return true;
-            } else {
-                System.out.println(" so tien nhap vao qua 100 $");
-
-            }
-            return false;
-
+    public boolean changeMoney(int money2) {
+        Account account = new Account();
+        if ( 0 < money2 && money2 < 100 ){
+           int s = account.getMoney();
+           s += money2;
+        } else {
+            System.out.println("nhap vao khong qua 100 $");
+        }
+     return false;
     }
 }

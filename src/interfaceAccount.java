@@ -7,5 +7,5 @@ public interface interfaceAccount {
 
     boolean deleteAccount(int id);
 
-    boolean changeMoney( Account account, int money2);
+    boolean changeMoney( int money2);
 }
