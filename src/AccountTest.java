@@ -48,9 +48,8 @@ public class AccountTest implements interfaceAccount {
     @Override
     public boolean changeMoney(int money2) {
         Account account = new Account();
-        if ( 0 < money2 && money2 < 100 ){
-           int s = account.getMoney();
-           s += money2;
+        if ( 0 < money2 && money2 <= 100 ){
+           return true;
         } else {
             System.out.println("nhap vao khong qua 100 $");
         }
