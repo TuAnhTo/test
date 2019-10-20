@@ -16,14 +16,44 @@ public class AccountTest implements interfaceAccount {
     }
 
     @Override
+    public void saveAccount(Account account) {
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getID() == account.getID()) {
+                accounts.add(i, account);
+                accounts.remove(i + 1);
+                return;
+            }
+        }
+        accounts.add(account);
+    }
+
+    @Override
     public void showAccount() {
-        System.out.println("ID" + "\t" + "Tai Khoan 1" + "\t" + "Tai Khoan 2" + "\t" + "Ngan Hang Lien Ket" + "\t" + "So tien hien tai");
+        System.out.println("ID" + "\t" + "Tai Khoan 1" + "\t" + "Tai Khoan 2" + "\t" + "Ngan Hang Lien Ket" + "\t" + "So tien hien tai cua tai khoan 1 ");
         for (Account account : accounts) {
-            System.out.println(account.getID() + "\t" + account.getnAccount1() + "\t" + account.getnAccount2() + "\t" + account.getnBank() + "\t" + account.getMoney());
+            System.out.println(account.getID() + "\t" + account.getnAccount1() + "\t" + account.getnAccount2() + "\t" + account.getnBank() + "\t" + account.getMoney1());
         }
 
     }
 
+    @Override
+    public String changeMoney(String accountName, int money2) {
+        String result;
+        Account account = findByAccountName(accountName);
+        if ((account == null)) {
+            result = "Tài khoản không tồn tại";
+        } else {
+            if ((0 < money2 && money2 <= 100)) {
+                account.setMoney1(account.getMoney1() + money2);
+                saveAccount(account);
+                result = "Nạp tiền thành công!";
+            } else {
+                result = "nạp tiền thất bại! số tiền không hợp lê.";
+            }
+        }
+        return result;
+
+    }
     @Override
     public boolean editAccount(Account account) {
         for (int i = 0; i < accounts.size(); i++) {
@@ -45,14 +75,16 @@ public class AccountTest implements interfaceAccount {
         }
         return false;
     }
+
+
     @Override
-    public boolean changeMoney(int money2) {
-        Account account = new Account();
-        if ( 0 < money2 && money2 <= 100 ){
-           return true;
-        } else {
-            System.out.println("nhap vao khong qua 100 $");
+    public Account findByAccountName(String name) {
+        Account account = null;
+        for (Account acc : accounts) {
+            if (acc.getnAccount1().equals(name) || acc.getnAccount2().equals(name)) {
+                account = acc;
+            }
         }
-     return false;
+        return account;
     }
 }

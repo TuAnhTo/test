@@ -40,15 +40,13 @@ public class Main {
                         System.out.println("vo hieu hoa khong thanh cong");
                     }
                 case 5:
-                    Account account2 = new Account();
+                    input.nextLine();
+                    System.out.print("Tên tài khoản mà bạn muốn nạp: ");
+                    String accountName = input.nextLine();
                     System.out.println("nap so tien can nap them: ");
                     int money2 = input.nextInt();
-                    boolean addmoney = accountTest.changeMoney(money2);
-                    if (addmoney){
-                        System.out.println("da nap tien thanh cong");
-                    }else {
-                        System.out.println(" ban khong duoc nap qua 100 $");
-                    }
+                    String result = accountTest.changeMoney(accountName,money2);
+                    System.out.println(result);
             }
         } while (check != 6);
 
@@ -66,6 +64,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("nhap ID tai khoan: ");
         int ID = input.nextInt();
+        input.nextLine();
         System.out.println("nhap vao ten tai khoan so 1: ");
         String nAccount1 = input.nextLine();
         System.out.println("nhap vao tai khoan so 2: ");

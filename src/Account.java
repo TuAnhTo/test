@@ -3,19 +3,19 @@ public class Account {
     private String nAccount1;
     private String nAccount2;
     private String nBank;
-    private int money;
+    private int money1;
 
     public Account() {
     }
 
     ;
 
-    public Account(int ID, String nAccount1, String nAccount2, String nBank, int money) {
+    public Account(int ID, String nAccount1, String nAccount2, String nBank, int money1) {
         this.ID = ID;
         this.nAccount1 = nAccount1;
         this.nAccount2 = nAccount2;
         this.nBank = nBank;
-        this.money = money;
+        this.money1 = money1;
     }
 
     public int getID() {
@@ -50,11 +50,11 @@ public class Account {
         this.nBank = nBank;
     }
 
-    public int getMoney() {
-        return money;
+    public int getMoney1() {
+        return money1;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public void setMoney1(int money1) {
+        this.money1 = money1;
     }
 }
